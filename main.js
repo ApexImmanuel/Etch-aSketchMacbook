@@ -33,6 +33,10 @@ function getColor() {
     this.style.backgroundColor = "black";
 }
 
-const resetButton = document.querySelector(".reset");
-resetButton.addEventListener("click", () => {
-});
+const resetButton  = document.querySelector(".reset");
+resetButton.addEventListener("click", gameReset);
+
+function gameReset() {
+    const boxReset = document.querySelectorAll(".gridBox");
+    boxReset.forEach(box => box.style.backgroundColor = "white");
+}
