@@ -1,0 +1,27 @@
+body {
+    box-sizing: border-box;
+}
+h1 {
+    text-align: center;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#container {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 2px solid black;
+    display: grid;
+}
+
+.foot {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: 2px;
+}
