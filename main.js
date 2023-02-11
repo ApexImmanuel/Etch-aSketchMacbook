@@ -1,3 +1,11 @@
+let click = false;
+document.querySelector("body").addEventListener("click",function(e) {
+    if (e.target.tagName != "BUTTON") {
+        click = !click;
+        if (click) {            
+        }
+    }
+});
 function createBord(size) {
     const container = document.querySelector("#container");
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -30,7 +38,9 @@ selectSize.addEventListener("click",() => {
 });
 
 function getColor() {
-    this.style.backgroundColor = "black";
+    if (click) {
+        this.style.backgroundColor = "black";
+    }
 }
 
 const resetButton  = document.querySelector(".reset");
