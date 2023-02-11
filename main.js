@@ -1,4 +1,9 @@
 let click = false;
+let color;
+let colorChoice;
+const blackButton = document.querySelector(".black");
+const randomButton = document.querySelector(".random");
+const eraserButton = document.querySelector(".eraser");
 document.querySelector("body").addEventListener("click",function(e) {
     if (e.target.tagName != "BUTTON") {
         click = !click;
@@ -37,12 +42,6 @@ selectSize.addEventListener("click",() => {
     createBord(getSize());
 });
 
-function getColor() {
-    if (click) {
-        this.style.backgroundColor = "black";
-    }
-}
-
 const resetButton  = document.querySelector(".reset");
 resetButton.addEventListener("click", gameReset);
 
@@ -50,3 +49,23 @@ function gameReset() {
     const boxReset = document.querySelectorAll(".gridBox");
     boxReset.forEach(box => box.style.backgroundColor = "white");
 }
+function getColor() {
+    if (click) {
+        if (color === "eraser") {
+            this.style.backgroundColor = "white";
+        } else if (color === "random") {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else if(color === "black") {
+            this.style.backgroundColor = "black";
+        }
+    }
+}
+blackButton.addEventListener("click", () => {
+    color = "black"
+});
+eraserButton.addEventListener("click", () => {
+    color = "eraser"
+});
+randomButton.addEventListener("click", () => {
+    color = "random";
+});
