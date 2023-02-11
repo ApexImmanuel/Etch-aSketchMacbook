@@ -25,3 +25,7 @@ h1 {
     gap: 70px;
     margin-top: 2px;
 }
+.message {
+    text-align: center;
+    font-weight: bold;
+}
